@@ -16,16 +16,20 @@ bool ButtonCap::isOff() {
 }
 
 void ButtonCap::init() {
+    associateInterrupt(pin);
+
     updateState();
     _prevState = _state;
 }
 
 void ButtonCap::loop() {
+    /*
     updateState();
     if (isChanged()) {
         executeOnChangeCallbacks();
         isOn() ? executeOnStateOnCallbacks() : executeOnStateOffChangeCallbacks();
     }
+    */
 }
 
 void ButtonCap::onChange(Callback callback) {
